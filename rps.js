@@ -18,7 +18,7 @@ function getComputerChoice(){
 let question = prompt("Choose Rock, Paper, or Scissors", '');
 
 function playRound(humanChoice, computerChoice){
-   value humanChoice.toLowerCase === computerChoice.toLowerCase;
+ //  value humanChoice.toLowerCase === computerChoice.toLowerCase;
 
     if (humanChoice == "Rock"){
         return "You lose! Rock beats Scissors";
@@ -31,6 +31,11 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+
+playRound(humanSelection, computerSelection);
 console.log(getComputerChoice(2));
 console.log(question);
-console.log(playRound());
+console.log(playRound(Rock));
