@@ -1,5 +1,8 @@
 let game = Math.floor(Math.random() * 3);
 
+const humanScore = 0;
+const computerScore = 0;
+
 function getComputerChoice(){
     if (game === 0){
         return "rock";
@@ -12,4 +15,7 @@ function getComputerChoice(){
     }
 }
 
+let question = prompt("Choose Rock, Paper, or Scissors", '');
+
 console.log(getComputerChoice(2));
+console.log(question);
