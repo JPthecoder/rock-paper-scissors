@@ -76,6 +76,8 @@ function playRound(humanChoice, computerChoice){
         return "Write Your Answer";
         
         }
+    humanScore++;
+    computerScore++;
 }
 
 
@@ -86,4 +88,18 @@ const computerSelection = getComputerChoice();
 console.log(playRound(humanSelection, computerSelection));
 
 
+function playGame(){
+    humanScore;
+    computerScore;
+    function playRound(){
 
+    for (i = 0; i <= 5; i++){
+        if (humanScore.selected){
+            humanScore++;
+        } else if (computerScore.selected){
+            computerScore++;
+        }
+    }
+}
+}
+console.log(playGame(5));
