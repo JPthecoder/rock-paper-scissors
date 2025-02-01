@@ -1,8 +1,5 @@
 let game = Math.floor(Math.random() * 3);
 
-const humanScore = 0;
-const computerScore = 0;
-
 function getComputerChoice(){
     if (game === 0){
         return "rock";
@@ -16,26 +13,32 @@ function getComputerChoice(){
 }
 
 let question = prompt("Choose Rock, Paper, or Scissors", '');
-
-function playRound(humanChoice, computerChoice){
+function getHumanChoice(){
  //  value humanChoice.toLowerCase === computerChoice.toLowerCase;
 
-    if (humanChoice == "Rock"){
+    if (question == "Rock"){
         return "You lose! Rock beats Scissors";
-    } else if (humanChoice == "Paper"){
+    } else if (question == "Paper"){
         return "You lose! Paper beats Rock";
-    } else if (humanChoice == "Scisscor"){
+    } else if (question == "Scisscor"){
         return "You lose! Scisscor beats Paper";
     } else {
         return "Write Your Answer...";
     }
 }
 
+const humanScore = 0;
+const computerScore = 0;
+
+function playRound(humanChoice, computerChoice){
+    if (humanChoice == "Rock" && )
+}
+
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 
-playRound(humanSelection, computerSelection);
+console.log(playRound(humanSelection, computerSelection));
 console.log(getComputerChoice(2));
 console.log(question);
 console.log(playRound(Rock));
