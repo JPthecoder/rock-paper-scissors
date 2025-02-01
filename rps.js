@@ -31,8 +31,8 @@ let question = prompt("Choose Rock, Paper, or Scissors", '');
 }
 
 
-const humanScore = 0;
-const computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
     
 function playRound(humanChoice, computerChoice){
     if (humanChoice === "rock" && computerChoice === "scissors"){
@@ -93,13 +93,14 @@ function playGame(){
     computerScore;
     function playRound(){
 
+ }
     for (i = 0; i <= 5; i++){
-        if (humanScore.selected){
-            humanScore++;
-        } else if (computerScore.selected){
-            computerScore++;
-        }
+      if (humanScore.selected){
+        humanScore++;
+    } else if (computerScore.selected){
+        computerScore++;
     }
+ }
 }
-}
-console.log(playGame(5));
+console.log(humanScore, computerScore);
+console.log(playGame());
