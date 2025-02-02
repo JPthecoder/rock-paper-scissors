@@ -1,6 +1,8 @@
-let game = Math.floor(Math.random() * 3);
+//let game = Math.floor(Math.random() * 3);
 
 function getComputerChoice(){
+    let game = Math.floor(Math.random() * 3);
+
     if (game === 0){
         return "rock";
     } else if (game === 1){
