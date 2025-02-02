@@ -1,4 +1,4 @@
-//let game = Math.floor(Math.random() * 3);
+/* //let game = Math.floor(Math.random() * 3);
 
 function getComputerChoice(){
     let game = Math.floor(Math.random() * 3);
@@ -53,7 +53,7 @@ function playRound(humanChoice, computerChoice){
    
     /* rock > scissors;
     paper > rock;
-    scissors > paper; */
+    scissors > paper;
     if (humanChoice === "rock" && computerChoice === "scissors"){
         // Right now, I'm coding and returning truthful statements without letting the computer know
         // Instead I need to code conditions to let the computer know who won
@@ -146,4 +146,4 @@ function playGame(){
 
 
 console.log(humanScore, computerScore);
-console.log(playRound());
+console.log(playRound()); */
