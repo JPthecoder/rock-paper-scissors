@@ -35,12 +35,16 @@ let humanScore = 0;
 let computerScore = 0;
     
 function playRound(humanChoice, computerChoice){
+    
     if (humanChoice === "rock" && computerChoice === "scissors"){
-
+        // Right now, I'm coding and returning truthful statements without letting the computer know
+        // Instead I need to code conditions to let the computer know who won
+        humanScore++;
         return "Amazing, Rock beats Scissors!";
         
         } else if ( humanChoice === "rock" && computerChoice === "paper"){
         
+        computerScore++;
         return "You lose, Paper beats Rock!";
         
         } else if (humanChoice === "rock" && computerChoice === "rock"){
@@ -48,11 +52,11 @@ function playRound(humanChoice, computerChoice){
         return "So close, it is a tie. Try again!";
         
         } else if (humanChoice === "paper" && computerChoice === "rock"){
-        
+        humanScore++;
         return "Amazing, Paper beats Rock!";
         
         } else if ( humanChoice === "paper" && computerChoice === "scissors"){
-        
+        computerScore++;
         return "You lose, Scissors beats paper!";
         
         } else if (humanChoice === "paper" && computerChoice === "paper"){
@@ -60,11 +64,11 @@ function playRound(humanChoice, computerChoice){
         return "So close, it is a tie. Try again!";
         
         } else if (humanChoice === "scissors" && computerChoice === "paper"){
-        
+        humanScore++;
         return "Amazing, Scissors beats Paper!";
         
         } else if ( humanChoice === "scissors" && computerChoice === "rock"){
-        
+        computerScore++;
         return "You lose, Rock beats Scissors!";
         
         } else if (humanChoice === "scissors" && computerChoice === "scissors"){
@@ -78,6 +82,9 @@ function playRound(humanChoice, computerChoice){
         }
     humanScore++;
     computerScore++;
+    // I feel like I'm telling the code what to do instead of having the code 
+    // understand who the round winner actually is
+    // my feelings are valid as I'm hardcoding every scenario versus making a dynamic code.
 }
 
 
@@ -85,14 +92,15 @@ function playRound(humanChoice, computerChoice){
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
+console.log(getComputerChoice());
+console.log(getHumanChoice());
 console.log(playRound(humanSelection, computerSelection));
 
 
-function playGame(){
-    humanScore;
-    computerScore;
+function playGame(i){
+    let humanScore = 0;
+    let computerScore = 0;
     function playRound(){
-
  }
     for (i = 0; i <= 5; i++){
       if (humanScore.selected){
@@ -103,4 +111,4 @@ function playGame(){
  }
 }
 console.log(humanScore, computerScore);
-console.log(playGame());
+console.log(playGame(5));
