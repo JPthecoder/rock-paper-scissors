@@ -58,12 +58,14 @@ function playRound(humanChoice, computerChoice){
         // Right now, I'm coding and returning truthful statements without letting the computer know
         // Instead I need to code conditions to let the computer know who won
         humanScore++;
+        return "Human";
         //winner = humanChoice;
-        //return "Amazing, Rock beats Scissors!"; 
+        //return ""Amazing, Rock beats Scissors!";" 
         
         } else if ( humanChoice === "rock" && computerChoice === "paper"){
         
         computerScore++;
+        return "Computer";
         //winner = computerChoice;
 
         //return "You lose, Paper beats Rock!";
@@ -74,11 +76,13 @@ function playRound(humanChoice, computerChoice){
         
         } else if (humanChoice === "paper" && computerChoice === "rock"){
         humanScore++;
+        return "Human";
         //winner = humanChoice;
         //return "Amazing, Paper beats Rock!";
         
         } else if ( humanChoice === "paper" && computerChoice === "scissors"){
         computerScore++;
+        return "Computer";
         //winner = computerChoice;
 
         //return "You lose, Scissors beats paper!";
@@ -89,11 +93,13 @@ function playRound(humanChoice, computerChoice){
         
         } else if (humanChoice === "scissors" && computerChoice === "paper"){
         humanScore++;
+        return "Human";
         //winner = humanChoice;
         //return "Amazing, Scissors beats Paper!";
         
         } else if ( humanChoice === "scissors" && computerChoice === "rock"){
         computerScore++;
+        return "Computer";
         //winner = computerChoice;
 
         //return "You lose, Rock beats Scissors!";
@@ -127,17 +133,17 @@ console.log(playRound(humanSelection, computerSelection));
 let winner;
 
 function playGame(){
-    for (i = 0; i = 5; i++){
+    for (i = 0; i < 5; i++){
         playRound();
     }
  
-    if (humanScore > computerScore){
-        console.log("Human Wins!");
-    } else {
-        console.log("Computer Wins");
+    if (playRound("Human")){
+        humanScore++;
+    } else if (playRound("Computer")){
+        computerScore++;
     }
 }
 
 
 console.log(humanScore, computerScore);
-console.log(winner);
+console.log(playRound());
