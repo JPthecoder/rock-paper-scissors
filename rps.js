@@ -57,14 +57,14 @@ function playRound(humanChoice, computerChoice){
     if (humanChoice === "rock" && computerChoice === "scissors"){
         // Right now, I'm coding and returning truthful statements without letting the computer know
         // Instead I need to code conditions to let the computer know who won
-        humanScore++;
+        //humanScore++;
         return "Human";
         //winner = humanChoice;
         //return ""Amazing, Rock beats Scissors!";" 
         
         } else if ( humanChoice === "rock" && computerChoice === "paper"){
         
-        computerScore++;
+        //computerScore++;
         return "Computer";
         //winner = computerChoice;
 
@@ -75,13 +75,13 @@ function playRound(humanChoice, computerChoice){
         //return "So close, it is a tie. Try again!";
         
         } else if (humanChoice === "paper" && computerChoice === "rock"){
-        humanScore++;
+        //humanScore++;
         return "Human";
         //winner = humanChoice;
         //return "Amazing, Paper beats Rock!";
         
         } else if ( humanChoice === "paper" && computerChoice === "scissors"){
-        computerScore++;
+        //computerScore++;
         return "Computer";
         //winner = computerChoice;
 
@@ -92,13 +92,13 @@ function playRound(humanChoice, computerChoice){
         //return "So close, it is a tie. Try again!";
         
         } else if (humanChoice === "scissors" && computerChoice === "paper"){
-        humanScore++;
+        //humanScore++;
         return "Human";
         //winner = humanChoice;
         //return "Amazing, Scissors beats Paper!";
         
         } else if ( humanChoice === "scissors" && computerChoice === "rock"){
-        computerScore++;
+        //computerScore++;
         return "Computer";
         //winner = computerChoice;
 
