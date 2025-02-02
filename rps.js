@@ -34,7 +34,6 @@ let question = prompt("Choose Rock, Paper, or Scissors", '');
 let humanScore = 0;
 let computerScore = 0;
 // let winner = "rock" > "scissors" || "paper > rock" || "scissors > paper";
-let winner = 0;
 function playRound(humanChoice, computerChoice){
 
 
@@ -58,52 +57,52 @@ function playRound(humanChoice, computerChoice){
         // Instead I need to code conditions to let the computer know who won
         humanScore++;
         //winner = humanChoice;
-        return "Amazing, Rock beats Scissors!"; 
+        //return "Amazing, Rock beats Scissors!"; 
         
         } else if ( humanChoice === "rock" && computerChoice === "paper"){
         
         computerScore++;
         //winner = computerChoice;
 
-        return "You lose, Paper beats Rock!";
+        //return "You lose, Paper beats Rock!";
         
         } else if (humanChoice === "rock" && computerChoice === "rock"){
         
-        return "So close, it is a tie. Try again!";
+        //return "So close, it is a tie. Try again!";
         
         } else if (humanChoice === "paper" && computerChoice === "rock"){
         humanScore++;
         //winner = humanChoice;
-        return "Amazing, Paper beats Rock!";
+        //return "Amazing, Paper beats Rock!";
         
         } else if ( humanChoice === "paper" && computerChoice === "scissors"){
         computerScore++;
         //winner = computerChoice;
 
-        return "You lose, Scissors beats paper!";
+        //return "You lose, Scissors beats paper!";
         
         } else if (humanChoice === "paper" && computerChoice === "paper"){
         
-        return "So close, it is a tie. Try again!";
+        //return "So close, it is a tie. Try again!";
         
         } else if (humanChoice === "scissors" && computerChoice === "paper"){
         humanScore++;
         //winner = humanChoice;
-        return "Amazing, Scissors beats Paper!";
+        //return "Amazing, Scissors beats Paper!";
         
         } else if ( humanChoice === "scissors" && computerChoice === "rock"){
         computerScore++;
         //winner = computerChoice;
 
-        return "You lose, Rock beats Scissors!";
+        //return "You lose, Rock beats Scissors!";
         
         } else if (humanChoice === "scissors" && computerChoice === "scissors"){
         
-        return "So close, it is a tie. Try again!";
+        //return "So close, it is a tie. Try again!";
         
         } else {
         
-        return "Write Your Answer";
+        //return "Write Your Answer";
         
         }
     humanScore++;
@@ -123,18 +122,20 @@ console.log(getHumanChoice());
 console.log(getComputerChoice());
 console.log(playRound(humanSelection, computerSelection));
 
+let winner;
 
 function playGame(){
-    for (i = 0; i <= 5; i++){
+    for (i = 0; i = 5; i++){
         playRound();
     }
  
     if (humanScore > computerScore){
-        winner = "human";
+        console.log("Human Wins!");
     } else {
-        winner = "computer";
+        console.log("Computer Wins");
     }
 }
+
 
 console.log(humanScore, computerScore);
 console.log(winner);
