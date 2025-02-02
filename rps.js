@@ -33,14 +33,30 @@ let question = prompt("Choose Rock, Paper, or Scissors", '');
 
 let humanScore = 0;
 let computerScore = 0;
-    
+// let winner = "rock" > "scissors" || "paper > rock" || "scissors > paper";
+let winner = getHumanChoice || getComputerChoice;
+
 function playRound(humanChoice, computerChoice){
-    
-    if (humanChoice === "rock" && computerChoice === "scissors"){
+
+    if ("rock" > "scissors"){
+        winner++;
+    } else if ("scissors" > "paper"){
+        winner++;
+    } else if ("paper" > "rock"){
+        winner++;
+    } else {
+        return "Tie!";
+    }
+
+   
+    /* rock > scissors;
+    paper > rock;
+    scissors > paper; */
+    /* if (humanChoice === "rock" && computerChoice === "scissors"){
         // Right now, I'm coding and returning truthful statements without letting the computer know
         // Instead I need to code conditions to let the computer know who won
         humanScore++;
-        return "Amazing, Rock beats Scissors!";
+        return "Amazing, Rock beats Scissors!"; 
         
         } else if ( humanChoice === "rock" && computerChoice === "paper"){
         
@@ -81,10 +97,11 @@ function playRound(humanChoice, computerChoice){
         
         }
     humanScore++;
-    computerScore++;
+    computerScore++; */
     // I feel like I'm telling the code what to do instead of having the code 
     // understand who the round winner actually is
     // my feelings are valid as I'm hardcoding every scenario versus making a dynamic code.
+
 }
 
 
@@ -92,8 +109,8 @@ function playRound(humanChoice, computerChoice){
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-console.log(getComputerChoice());
 console.log(getHumanChoice());
+console.log(getComputerChoice());
 console.log(playRound(humanSelection, computerSelection));
 
 
