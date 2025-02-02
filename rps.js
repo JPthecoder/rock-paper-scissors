@@ -147,3 +147,64 @@ function playGame(){
 
 console.log(humanScore, computerScore);
 console.log(playRound()); */
+
+function getComputerChoice(){
+    let choice = Math.floor(Math.random()*3);
+        if (choice === 0){
+            return "rock";
+    }   else if (choice === 1){
+            return "paper";
+    }   else if (choice === 2){
+            return "scissors";
+    }   else {
+            return "Invalid answer, guess again";
+    }
+}
+//    console.log(getComputerChoice());
+
+function getHumanChoice(){
+    let answer = prompt("Rock, Paper, or Scissors?",'').toLowerCase();
+        if (answer == "rock"){
+                return "rock";
+    }   else if (answer == "paper"){
+                return "paper";
+    }   else if (answer == "scissors"){
+                return "scissors";
+    }   else {
+                return "Invalid answer, guess again";
+    }
+}
+//    console.log(getHumanChoice());
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, computerChoice){
+    //getHumanChoice().toLowerCase;
+        if (humanChoice == "rock" && computerChoice == "scissors"){
+            //humanScore++;
+            return "Human";
+    }   else if (humanChoice == "paper" && computerChoice == "rock"){
+            //humanScore++;
+            return "Human";
+    }   else if (humanChoice == "scisscors" && computerChoice == "paper"){
+            //humanScore++;
+            return "Human";
+    }   else if (computerChoice == "rock" && humanChoice == "scissors"){
+            //humanScore++;
+            return "Computer";
+    }   else if (computerChoice == "paper" && humanChoice == "rock"){
+            //humanScore++;
+            return "Computer";
+    }   else if (computerChoice == "scisscors" && humanChoice == "paper"){
+            //humanScore++;
+            return "Computer";
+    }   else {
+            return "Tie";
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+console.log(humanSelection, computerSelection);
+
