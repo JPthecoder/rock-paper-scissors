@@ -14,7 +14,7 @@ function getComputerChoice(){
     }
 }
 
-let question = prompt("Choose Rock, Paper, or Scissors", '');
+let question = prompt("Choose Rock, Paper, or Scissors", '').toLowerCase();
     function getHumanChoice(){
  //  value humanChoice.toLowerCase === computerChoice.toLowerCase;
 
