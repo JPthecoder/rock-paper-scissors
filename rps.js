@@ -88,3 +88,74 @@ playGame(); */
 
 
 
+function getComputerChoice(){
+    let option = Math.floor(Math.random() *3);
+        if (option == "0"){
+            return "rock";
+    }   else if (option == "1"){
+            return "paper";
+    }   else if (option == "2"){
+            return "scissors";
+    }
+}
+
+console.log(getComputerChoice());
+
+function getHumanChoice(){
+    let choice = prompt("Rock, Paper, or Scissors?", '').toLowerCase();
+        if (choice === "rock"){
+            return "rock";
+    }   else if (choice === "paper"){
+            return "paper";
+    }   else if (choice === "scissors"){
+            return "scissors";
+    }
+}
+
+console.log(getHumanChoice());
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, computerChoice){
+    // the results of this game will always have a tie and either computer or human winning
+    // we want to declare the constant first just in case there is a mix up when both var equals the same option
+        if (humanChoice === computerChoice){
+            return "AI can't beat you right now, its a tie!";
+    }   else if (
+            (humanChoice === "rock" && computerChoice === "scissors") ||
+            (humanChoice === "paper" && computerChoice === "rock") ||
+            (humanChoice === "scissors" && computerChoice === "paper")
+    ){
+            return "Humans"
+    }   else {
+            return "Computer"
+    }
+}
+
+function playGame(){
+    let humanScore = 0;
+    let computerScore = 0;
+
+
+    for (i=0; i<5; i++){
+        const humanChoice = getHumanChoice();
+        const computerChoice = getComputerChoice();
+        const winner = playRound(humanChoice, computerChoice);
+                if (humanChoice > computerChoice){
+                    humanScore++;
+            }   else if (computerChoice > humanChoice){
+                    computerScore++;
+            }
+        }
+
+    if (humanScore > computerScore){
+        console.log("Humans are the superiror race!");
+}   else if (computerScore > humanScore){
+        console.log("AI are catching up to humanity");
+}
+
+    console.log(`Final Results: Humans won ${humanScore} times, Computer won ${computerScore} times`);
+}
+
+playGame();
