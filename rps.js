@@ -132,13 +132,13 @@ function playRound(humanChoice, computerChoice){
             return "Computer"
     }
 }
-
+/*
 function playGame(){
     let humanScore = 0;
     let computerScore = 0;
 
 
-    for (i=0; i<5; i++){
+    for (i=0; i<1; i++){
         const humanChoice = getHumanChoice();
         const computerChoice = getComputerChoice();
         const winner = playRound(humanChoice, computerChoice);
@@ -159,3 +159,50 @@ function playGame(){
 }
 
 playGame();
+*/
+const container = document.querySelector("#container");
+
+const rock = document.createElement("button");
+rock.setAttribute('id', 'btn');
+rock.textContent = "Rock";
+rock.value = "rock";
+
+container.appendChild(rock);
+
+const paper = document.createElement("button");
+paper.setAttribute('id', 'btn');
+paper.value = "paper";
+paper.textContent = "Paper";
+
+container.appendChild(paper);
+
+const scissor = document.createElement("button");
+scissor.setAttribute('id', 'btn');
+scissor.textContent = "Scissor";
+scissor.value = "scissor"
+
+container.appendChild(scissor);
+
+function playSelection(){
+rock.addEventListener("click", ()=>{
+        rock.value === "rock";
+        console.log(rock.value);
+});
+
+paper.addEventListener("click", ()=>{
+        paper.value === "paper";
+        console.log (paper.value);
+});
+
+scissor.addEventListener("click", ()=>{
+        scissor.value === "scissor";
+        console.log (scissor.value);
+});
+
+};
+
+playSelection();
+
+
+// I'm thinking because my button doesn't correlate an actual answer
+// The button display the value but the backend doesn't have the value connected so button rock doesn't connect to rock
