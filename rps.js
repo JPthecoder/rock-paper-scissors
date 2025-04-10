@@ -79,12 +79,17 @@ console.log(getHumanChoice());
 */
 let humanScore = 0;
 let computerScore = 0;
+let currentRound = 0;
 
 function playRound(playerSelection, computerChoice){
     // the results of this game will always have a tie and either computer or human winning
     // we want to declare the constant first just in case there is a mix up when both var equals the same option
-        if (playerSelection === computerChoice){
-                console.log( "AI can't beat you right now, its a tie!");
+        
+    if (playerSelection === computerChoice){
+                const newDiv2 = document.createElement("div");
+                   newDiv2.setAttribute("id", "newDiv");
+                   newDiv2.textContent = ` Results: AI can't beat you right now, its a tie!`;
+                   container.appendChild(newDiv2);
     }   else if (
             (playerSelection === "rock" && computerChoice === "scissor") ||
             (playerSelection === "paper" && computerChoice === "rock") ||
@@ -92,19 +97,36 @@ function playRound(playerSelection, computerChoice){
     ){
             //console.log("Humans")
             humanScore++;
+            console.log("Humans are the superiror race!");
     }   else {
             //console.log("Computer")
             computerScore++;
+            console.log("AI are catching up to humanity");
+
     }
+
     console.log(playerSelection);
     console.log(computerChoice);
 
-    if (humanScore > computerScore){
+    const newDiv = document.createElement("div");
+        newDiv.setAttribute("id","Div");
+        newDiv.textContent = `Players choice: ${playerSelection}`;
+        container.appendChild(newDiv);
+    const newDiv1 = document.createElement("div")
+        newDiv1.setAttribute("id", "newDiv");
+        newDiv1.textContent = `Computers choice: ${computerChoice}`;
+        container.appendChild(newDiv1);
+
+/*    if (humanScore > computerScore){
         console.log("Humans are the superiror race!");
 }   else if (computerScore > humanScore){
         console.log("AI are catching up to humanity");
-}
+} */
+        currentRound++;
+        console.log(`Current Round: ${currentRound}`);
+        if (currentRound < 6){
         console.log(`Final Results: Humans won ${humanScore} times, Computer won ${computerScore} times`);
+        }
 };
 
 container.addEventListener("click",(e)=>{
@@ -114,8 +136,12 @@ container.addEventListener("click",(e)=>{
                 const computerChoice = getComputerChoice();
                 playRound(playerSelection, computerChoice);
         }
-
 });
+
+
+        
+
+
 /*
 function playGame(){
         let humanScore = 0;
@@ -147,7 +173,7 @@ playGame();
     let computerScore = 0;
 
 
-    for (i=0; i<1; i++){
+    for (i=0; i<5; i++){
         const playerChoice = getPlayerSelection();
         const computerChoice = getComputerChoice();
         const winner = playRound(playerChoice, computerChoice);
