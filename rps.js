@@ -139,7 +139,7 @@ scissor.addEventListener("click", scissorSelection);
 function scissorSelection(){
         const s = document.getElementById("scissor");
         s.value = "scissor";
-        //console.log(scissor.value);
+        console.log(scissor.value);
 }
 
 
