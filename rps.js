@@ -1,5 +1,5 @@
 function getComputerChoice(){
-    let option = Math.floor(Math.random() *3);
+/*    let option = Math.floor(Math.random() *3);
         if (option == "0"){
             return "rock";
     }   else if (option == "1"){
@@ -8,7 +8,11 @@ function getComputerChoice(){
             return "scissors";
     }
 };
-
+*/
+        const colorOption = ["rock", "paper", "scissor"];
+        const randomIndex = Math.floor(Math.random() * colorOption.length);
+        return colorOption[randomIndex];
+}
 //console.log(getComputerChoice());
 
 const container = document.querySelector("#container");
@@ -80,9 +84,9 @@ function playRound(playerSelection, computerChoice){
     // the results of this game will always have a tie and either computer or human winning
     // we want to declare the constant first just in case there is a mix up when both var equals the same option
         if (playerSelection === computerChoice){
-            console.log( "AI can't beat you right now, its a tie!");
+                console.log( "AI can't beat you right now, its a tie!");
     }   else if (
-            (playerSelection === "rock" && computerChoice === "scissors") ||
+            (playerSelection === "rock" && computerChoice === "scissor") ||
             (playerSelection === "paper" && computerChoice === "rock") ||
             (playerSelection === "scissor" && computerChoice === "paper")
     ){
@@ -92,6 +96,15 @@ function playRound(playerSelection, computerChoice){
             //console.log("Computer")
             computerScore++;
     }
+    console.log(playerSelection);
+    console.log(computerChoice);
+
+    if (humanScore > computerScore){
+        console.log("Humans are the superiror race!");
+}   else if (computerScore > humanScore){
+        console.log("AI are catching up to humanity");
+}
+        console.log(`Final Results: Humans won ${humanScore} times, Computer won ${computerScore} times`);
 };
 
 container.addEventListener("click",(e)=>{
@@ -101,14 +114,6 @@ container.addEventListener("click",(e)=>{
                 const computerChoice = getComputerChoice();
                 playRound(playerSelection, computerChoice);
         }
-                console.log(target.value);
-                console.log(getComputerChoice());
-        if (humanScore > computerScore){
-                console.log("Humans are the superiror race!");
-        }   else if (computerScore > humanScore){
-                console.log("AI are catching up to humanity");
-        }
-        console.log(`Final Results: Humans won ${humanScore} times, Computer won ${computerScore} times`);
 
 });
 /*
