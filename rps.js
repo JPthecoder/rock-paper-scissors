@@ -106,16 +106,7 @@ const container = document.querySelector("#container");
 const rock = document.createElement("button");
 rock.setAttribute('id', 'btn');
 rock.textContent = "Rock";
-rock.value = "rock"
-rock.addEventListener("click",function(e){
-        console.log(e)
-});
-/*rock.addEventListener("click", rockSelection);
-function rockSelection(){
-        const r = document.getElementById("rock");
-	r.value = "rock";
-        console.log(rock.value);
-};*/
+rock.value = "rock";
 
 container.appendChild(rock);
 
@@ -123,59 +114,16 @@ const paper = document.createElement("button");
 paper.setAttribute('id', 'paper');
 paper.value = "paper";
 paper.textContent = "Paper";
-paper.addEventListener("click", paperSelection);
-function paperSelection(){
-        const p = document.getElementById("paper");
-        p.value = "paper";
-        //console.log(paper.value);
-}
+
 container.appendChild(paper);
 
 const scissor = document.createElement("button");
 scissor.setAttribute('id', 'btn');
 scissor.textContent = "Scissor";
-scissor.value = "scissor"
-scissor.addEventListener("click", scissorSelection);
-function scissorSelection(){
-        const s = document.getElementById("scissor");
-        s.value = "scissor";
-        console.log(scissor.value);
-}
-
+scissor.value = "scissor";
 
 container.appendChild(scissor);
 
-
-/*
-function getPlayerSelection(){
-        if(button.value === "rock"){
-                return "rock";
-} else if(button.value === "paper"){
-                return "paper";
-} else if(button.value === "scissor"){
-                return "scissor";
-}
-};
-*/
-/*
-function getPlayerSelection(){
-        if(btn.onClick == "rock"){
-                return "rock";
-        } else if (btn.onClick == "paper"){
-                return "paper";
-        } else if (btn.onClick == "scissor"){
-                return "scissor";
-        }
-     };
-
-console.log(getPlayerSelection());
-*/      
-/*
-rock.addEventListener("click", playRound(playerSelection)){
-        if(rock.value === "rock"){
-                playerSelection === "rock";
-        }};
-*/
 /* function getHumanChoice(){
     let choice = prompt("Rock, Paper, or Scissors?", '').toLowerCase();
         if (choice === "rock"){
