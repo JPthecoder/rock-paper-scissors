@@ -97,11 +97,86 @@ function getComputerChoice(){
     }   else if (option == "2"){
             return "scissors";
     }
-}
+};
 
 console.log(getComputerChoice());
 
-function getHumanChoice(){
+const container = document.querySelector("#container");
+
+const rock = document.createElement("button");
+rock.setAttribute('id', 'btn');
+rock.textContent = "Rock";
+rock.value = "rock"
+rock.addEventListener("click",function(e){
+        console.log(e)
+});
+/*rock.addEventListener("click", rockSelection);
+function rockSelection(){
+        const r = document.getElementById("rock");
+	r.value = "rock";
+        console.log(rock.value);
+};*/
+
+container.appendChild(rock);
+
+const paper = document.createElement("button");
+paper.setAttribute('id', 'paper');
+paper.value = "paper";
+paper.textContent = "Paper";
+paper.addEventListener("click", paperSelection);
+function paperSelection(){
+        const p = document.getElementById("paper");
+        p.value = "paper";
+        //console.log(paper.value);
+}
+container.appendChild(paper);
+
+const scissor = document.createElement("button");
+scissor.setAttribute('id', 'btn');
+scissor.textContent = "Scissor";
+scissor.value = "scissor"
+scissor.addEventListener("click", scissorSelection);
+function scissorSelection(){
+        const s = document.getElementById("scissor");
+        s.value = "scissor";
+        //console.log(scissor.value);
+}
+
+
+container.appendChild(scissor);
+
+
+/*
+function getPlayerSelection(){
+        if(button.value === "rock"){
+                return "rock";
+} else if(button.value === "paper"){
+                return "paper";
+} else if(button.value === "scissor"){
+                return "scissor";
+}
+};
+*/
+/*
+function getPlayerSelection(){
+        if(btn.onClick == "rock"){
+                return "rock";
+        } else if (btn.onClick == "paper"){
+                return "paper";
+        } else if (btn.onClick == "scissor"){
+                return "scissor";
+        }
+     };
+
+console.log(getPlayerSelection());
+*/      
+/*
+rock.addEventListener("click", playRound(playerSelection)){
+        if(rock.value === "rock"){
+                playerSelection === "rock";
+        }};
+*/
+/* function getHumanChoice(){
     let choice = prompt("Rock, Paper, or Scissors?", '').toLowerCase();
         if (choice === "rock"){
             return "rock";
@@ -113,38 +188,63 @@ function getHumanChoice(){
 }
 
 console.log(getHumanChoice());
-
+*/
 let humanScore = 0;
 let computerScore = 0;
 
-function playRound(humanChoice, computerChoice){
+function playRound(playerSelection, computerChoice){
     // the results of this game will always have a tie and either computer or human winning
     // we want to declare the constant first just in case there is a mix up when both var equals the same option
-        if (humanChoice === computerChoice){
+        if (playerSelection === computerChoice){
             return "AI can't beat you right now, its a tie!";
     }   else if (
-            (humanChoice === "rock" && computerChoice === "scissors") ||
-            (humanChoice === "paper" && computerChoice === "rock") ||
-            (humanChoice === "scissors" && computerChoice === "paper")
+            (playerSelection === "rock" && computerChoice === "scissors") ||
+            (playerSelection === "paper" && computerChoice === "rock") ||
+            (playerSelection === "scissors" && computerChoice === "paper")
     ){
             return "Humans"
     }   else {
             return "Computer"
     }
 }
-/*
+
 function playGame(){
+        let humanScore = 0;
+        let computerScore = 0;
+        const playerSelection = getPlayerSelection();
+        const computerChoice = getComputerChoice();
+        const winner = playRound(playerSelection, computerChoice);
+                if (playerSelection > computerChoice){
+                    humanScore++;
+            }   else if (computerChoice > playerSelection){
+                    computerScore++;
+            }
+        }
+
+    if (humanScore > computerScore){
+        console.log("Humans are the superiror race!");
+}   else if (computerScore > humanScore){
+        console.log("AI are catching up to humanity");
+}
+
+    console.log(`Final Results: Humans won ${humanScore} times, Computer won ${computerScore} times`);
+
+playGame();
+
+
+/*
+ function playGame(){
     let humanScore = 0;
     let computerScore = 0;
 
 
     for (i=0; i<1; i++){
-        const humanChoice = getHumanChoice();
+        const playerChoice = getPlayerSelection();
         const computerChoice = getComputerChoice();
-        const winner = playRound(humanChoice, computerChoice);
-                if (humanChoice > computerChoice){
+        const winner = playRound(playerChoice, computerChoice);
+                if (playerChoice > computerChoice){
                     humanScore++;
-            }   else if (computerChoice > humanChoice){
+            }   else if (computerChoice > playerChoice){
                     computerScore++;
             }
         }
@@ -158,51 +258,5 @@ function playGame(){
     console.log(`Final Results: Humans won ${humanScore} times, Computer won ${computerScore} times`);
 }
 
-playGame();
+playGame(); 
 */
-const container = document.querySelector("#container");
-
-const rock = document.createElement("button");
-rock.setAttribute('id', 'btn');
-rock.textContent = "Rock";
-rock.value = "rock";
-
-container.appendChild(rock);
-
-const paper = document.createElement("button");
-paper.setAttribute('id', 'btn');
-paper.value = "paper";
-paper.textContent = "Paper";
-
-container.appendChild(paper);
-
-const scissor = document.createElement("button");
-scissor.setAttribute('id', 'btn');
-scissor.textContent = "Scissor";
-scissor.value = "scissor"
-
-container.appendChild(scissor);
-
-function playSelection(){
-rock.addEventListener("click", ()=>{
-        rock.value === "rock";
-        console.log(rock.value);
-});
-
-paper.addEventListener("click", ()=>{
-        paper.value === "paper";
-        console.log (paper.value);
-});
-
-scissor.addEventListener("click", ()=>{
-        scissor.value === "scissor";
-        console.log (scissor.value);
-});
-
-};
-
-playSelection();
-
-
-// I'm thinking because my button doesn't correlate an actual answer
-// The button display the value but the backend doesn't have the value connected so button rock doesn't connect to rock
