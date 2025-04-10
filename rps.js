@@ -122,10 +122,14 @@ function playRound(playerSelection, computerChoice){
 }   else if (computerScore > humanScore){
         console.log("AI are catching up to humanity");
 } */
+        let maxRound = 5;
         currentRound++;
         console.log(`Current Round: ${currentRound}`);
-        if (currentRound < 6){
-        console.log(`Final Results: Humans won ${humanScore} times, Computer won ${computerScore} times`);
+        if (currentRound < maxRound){
+                console.log(`Current Results: Humans won ${humanScore} times, Computer won ${computerScore} times`);
+        } else if (currentRound = maxRound){
+                console.log(`Final Results: Humans won ${humanScore} times, Computer won ${computerScore} times`);
+
         }
 };
 
