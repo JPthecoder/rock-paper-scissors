@@ -79,6 +79,7 @@ console.log(getHumanChoice());
 */
 let humanScore = 0;
 let computerScore = 0;
+let tieScore = 0;
 let currentRound = 0;
 
 function playRound(playerSelection, computerChoice){
@@ -88,8 +89,9 @@ function playRound(playerSelection, computerChoice){
     if (playerSelection === computerChoice){
                 const newDiv2 = document.createElement("div");
                    newDiv2.setAttribute("id", "newDiv");
-                   newDiv2.textContent = ` Results: AI can't beat you right now, its a tie!`;
+                   newDiv2.textContent = ` Results: AI knows you well, its a tie!`;
                    container.appendChild(newDiv2);
+                   tieScore++
     }   else if (
             (playerSelection === "rock" && computerChoice === "scissor") ||
             (playerSelection === "paper" && computerChoice === "rock") ||
@@ -97,10 +99,19 @@ function playRound(playerSelection, computerChoice){
     ){
             //console.log("Humans")
             humanScore++;
+            const newDiv = document.createElement("div")
+                newDiv.setAttribute("id", "newDiv");
+                newDiv.textContent = `Humans Win!`;
+                container.appendChild(newDiv);
             console.log("Humans are the superiror race!");
     }   else {
             //console.log("Computer")
             computerScore++;
+            const newDiv2 = document.createElement("div")
+                newDiv2.setAttribute("id", "newDiv");
+                newDiv2.textContent = `Computers Win!`;
+                container.appendChild(newDiv2);
+            console.log("Humans are the superiror race!");
             console.log("AI are catching up to humanity");
 
     }
@@ -108,14 +119,11 @@ function playRound(playerSelection, computerChoice){
     console.log(playerSelection);
     console.log(computerChoice);
 
-    const newDiv = document.createElement("div");
-        newDiv.setAttribute("id","Div");
-        newDiv.textContent = `Players choice: ${playerSelection}`;
-        container.appendChild(newDiv);
-    const newDiv1 = document.createElement("div")
-        newDiv1.setAttribute("id", "newDiv");
-        newDiv1.textContent = `Computers choice: ${computerChoice}`;
+    const newDiv1 = document.createElement("div");
+        newDiv1.setAttribute("id","Div");
+        newDiv1.textContent = `Players choice: ${playerSelection} | Computers choice: ${computerChoice}`;;
         container.appendChild(newDiv1);
+    
 
 /*    if (humanScore > computerScore){
         console.log("Humans are the superiror race!");
@@ -127,10 +135,32 @@ function playRound(playerSelection, computerChoice){
         console.log(`Current Round: ${currentRound}`);
         if (currentRound < maxRound){
                 console.log(`Current Results: Humans won ${humanScore} times, Computer won ${computerScore} times`);
-        } else if (currentRound = maxRound){
+        } else if (currentRound <= maxRound){
+                const newDiv3 = document.createElement("div")
+                        newDiv3.setAttribute("id", "newDiv");
+                        newDiv3.textContent = `Best of 5 Results: Humans won ${humanScore} times, Computer won ${computerScore} times, Ties: ${tieScore}`;
+                        container.appendChild(newDiv3);
+                console.log("Humans are the superiror race!");
                 console.log(`Final Results: Humans won ${humanScore} times, Computer won ${computerScore} times`);
-
+        } else if (currentRound > maxRound){
+                const newDiv4 = document.createElement("div")
+                        newDiv4.setAttribute("id", "newDiv");
+                        newDiv4.textContent = "Click below to play again";
+                        container.appendChild(newDiv4)
+                const button1 = document.createElement("button");
+                        button1.textContent = "Play Again";
+                        button1.setAttribute("id", "replay")
+                        container.appendChild(button1);
+                        container.addEventListener("click",(e)=>{
+                                let target = e.target;
+                                if (target.id === "replay"){
+                                        const playerSelection = target.value;
+                                        const computerChoice = getComputerChoice();
+                                        playRound(playerSelection,computerChoice);
+                                }
+                        })
         }
+
 };
 
 container.addEventListener("click",(e)=>{
