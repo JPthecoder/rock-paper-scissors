@@ -22,6 +22,7 @@ container.setAttribute("id", "container");
 const rock = document.createElement("button");
 rock.setAttribute('id', 'btn');
 rock.value = "rock";
+rock.classList.add("button");
 rock.textContent = "Rock";
 
 
@@ -30,6 +31,7 @@ container.appendChild(rock);
 const paper = document.createElement("button");
 paper.setAttribute('id', 'btn');
 paper.value = "paper";
+paper.classList.add("button");
 paper.textContent = "Paper";
 
 container.appendChild(paper);
@@ -37,6 +39,7 @@ container.appendChild(paper);
 const scissor = document.createElement("button");
 scissor.setAttribute('id', 'btn');
 scissor.value = "scissor";
+scissor.classList.add("button");
 scissor.textContent = "Scissor";
 
 
@@ -149,17 +152,18 @@ function playRound(playerSelection, computerChoice){
                         container.appendChild(newDiv4)
                 const button1 = document.createElement("button");
                         button1.textContent = "Play Again";
-                        button1.setAttribute("id", "replay")
+                        button1.setAttribute("id", "button")
                         container.appendChild(button1);
-                        container.addEventListener("click",(e)=>{
-                                let target = e.target;
-                                if (target.id === "replay"){
-                                        const playerSelection = target.value;
-                                        const computerChoice = getComputerChoice();
-                                        playRound(playerSelection,computerChoice);
-                                }
-                        })
+                        
         }
+        /* container.addEventListener("click",(e)=>{
+                let target = e.target;
+                if (target.id === "button"){
+                        const playerSelection = target.value;
+                        const computerChoice = getComputerChoice();
+                        playRound(playerSelection,computerChoice);
+                }
+        }) */
 
 };
 
