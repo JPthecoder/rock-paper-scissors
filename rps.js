@@ -143,9 +143,21 @@ function playRound(playerSelection, computerChoice){
                         newDiv3.setAttribute("id", "newDiv");
                         newDiv3.textContent = `Best of 5 Results: Humans won ${humanScore} times, Computer won ${computerScore} times, Ties: ${tieScore}`;
                         container.appendChild(newDiv3);
-                console.log("Humans are the superiror race!");
-                console.log(`Final Results: Humans won ${humanScore} times, Computer won ${computerScore} times`);
-        } else if (currentRound > maxRound){
+        };
+
+ /*       if(humanScore>computerScore){
+                const newDiv5 = document.createElement("div")
+                        newDiv5.setAttribute("id", "newDiv");
+                        newDiv5.textContent = "The champion is the Human!";
+                        container.appendChild(newDiv5);
+        } else if (computerScore<humanScore){
+                const newDiv5 = document.createElement("div")
+                        newDiv5.setAttribute("id", "newDiv");
+                        newDiv5.textContent = "The champion is the Computer!";
+                container.appendChild(newDiv5);        
+        };
+*/
+        if (currentRound > maxRound){
                 const newDiv4 = document.createElement("div")
                         newDiv4.setAttribute("id", "newDiv");
                         newDiv4.textContent = "Click below to play again";
@@ -154,8 +166,9 @@ function playRound(playerSelection, computerChoice){
                         button1.textContent = "Play Again";
                         button1.setAttribute("id", "button")
                         container.appendChild(button1);
+               
                         
-        }
+        }};
         /* container.addEventListener("click",(e)=>{
                 let target = e.target;
                 if (target.id === "button"){
@@ -165,7 +178,7 @@ function playRound(playerSelection, computerChoice){
                 }
         }) */
 
-};
+
 
 container.addEventListener("click",(e)=>{
         let target = e.target;
