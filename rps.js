@@ -3,6 +3,11 @@ function comp(){
         const mix = Math.floor(Math.random() *rps.length);
         return rps[mix];
     }
+
+    const hTitle = document.createElement("div")
+    hTitle.setAttribute("id", "hTitle")
+    hTitle.textContent = "Human"
+    document.body.appendChild(hTitle)
     
     const newDiv = document.createElement("div");
     newDiv.setAttribute("id", "divi");
@@ -14,6 +19,11 @@ function comp(){
     rock.textContent = "Rock"
     rock.value = "rock"
     newDiv.appendChild(rock);
+
+    const rImg = document.createElement("img");
+    rImg.src = "./icons-for-rps/rock.png"
+    rImg.alt = "Rock"
+    rock.appendChild(rImg);
     
     const paper = document.createElement("button");
     paper.setAttribute("id", "option")
@@ -26,6 +36,14 @@ function comp(){
     scissors.textContent = "Scissors"
     scissors.value = "scissors"
     newDiv.appendChild(scissors);
+
+    const card = document.createElement("div");
+    document.body.appendChild(card);
+
+    const hCard = document.createElement("button");
+    // Should this be a button or a highlighted paragraph with borders?
+    hCard.textContent = "Human Choice"
+    card.appendChild(hCard);
     
     const div1 = document.createElement("div");
     div1.setAttribute("id", "div1");
@@ -112,3 +130,55 @@ function comp(){
             newDiv.addEventListener("click", start);
         }
     }
+
+ 
+
+    const hvsc = document.createElement("div");
+    hvsc.setAttribute("id", "hvsc");
+    document.body.appendChild(hvsc);
+
+    const hScore = document.createElement("p");
+    hScore.textContent = `Sapiens: ${sapiensPoint} | Computer: ${computerPoint}`
+    hvsc.appendChild(hScore);
+
+
+    const card1 = document.createElement("div");
+    document.body.appendChild(card1);
+
+    const cCard = document.createElement("button");
+    // Should this be a button or a highlighted paragraph with borders?
+    cCard.textContent = "Computer Choice"
+    card1.appendChild(cCard);
+
+
+    const cButton = document.createElement("div");
+    cButton.setAttribute("id", "cButton");
+    document.body.appendChild(cButton);
+
+    const cRock = document.createElement("button");
+    cRock.setAttribute("id", "cOption")
+    cRock.textContent = "Paper";
+    cRock.value = "paper";
+    cButton.appendChild(cRock);
+
+    const cPaper = document.createElement("button");
+    cPaper.setAttribute("id", "cOption")
+    cPaper.textContent = "Paper";
+    cPaper.value = "paper";
+    cButton.appendChild(cPaper);
+
+    const cScissors = document.createElement("button");
+    cScissors.setAttribute("id", "cOption")
+    cScissors.textContent = "Scissors";
+    cScissors.value = "scissors";
+    cButton.appendChild(cScissors);
+
+    const title = document.querySelector("#container");
+    document.body.appendChild(container)
+    title.textContent = "Computer"
+
+
+    // add icons
+    // have choices highlighted for both humans and computer
+    // highlight face off buttons
+    // build an overlay for winners and to play again
