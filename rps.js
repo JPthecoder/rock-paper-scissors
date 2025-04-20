@@ -23,6 +23,7 @@ function comp(){
     const rImg = document.createElement("img");
     rImg.src = "./iconsrps/rock.png"
     rImg.alt = "rock"
+    rImg.id = "hChoice"
     rock.appendChild(rImg);
     
     const paper = document.createElement("button");
@@ -33,7 +34,8 @@ function comp(){
 
     const pImg = document.createElement("img");
     pImg.src = "./iconsrps/hello.png"
-    pImg.alt = "Paper"
+    pImg.alt = "paper"
+    pImg.id = "hChoice"
     paper.appendChild(pImg);
     
     const scissors = document.createElement("button");
@@ -45,6 +47,7 @@ function comp(){
     const sImg = document.createElement("img");
     sImg.src = "./iconsrps/scissors.png"
     sImg.alt = "scissors"
+    sImg.id = "hChoice"
     scissors.appendChild(sImg);
 
     const card = document.createElement("div");
@@ -95,6 +98,10 @@ function comp(){
         const points = document.createElement("p");
         points.textContent = `Sapiens: ${sapiensPoint} | Computer: ${computerPoint} | Draw: ${tieScore}`;
         div1.appendChild(points);
+
+        if (tieScore++ | sapiensPoint++ | computerPoint++){
+                console.log(resetColor());
+        }
         
         if (sapiensPoint === 5){
             const divp6 = document.createElement("p")
@@ -124,12 +131,33 @@ function comp(){
     function start(e){
         let target = e.target
     
-        if (target.id === "option"){
-            const sapiens = target.value;
+        if (target.id === "hChoice"){
+            const sapiens = target.alt;
             const computer = comp();
             battle(sapiens, computer);
+
+            if (computer === "rock"){
+                cRock.style.backgroundColor = "Pink";
+            } else if (computer === "paper"){
+                cPaper.style.backgroundColor = "Pink";
+            } else if (computer === "scissors"){
+                cScissors.style.backgroundColor = "Pink";
+            } 
         }
     }
+
+    function resetColor(){
+        /* if (computer === "rock"){
+                cRock.style.backgroundColor = "Pink";
+            } else if (computer === "paper"){
+                cPaper.style.backgroundColor = "Pink";
+            } else if (computer === "scissors"){
+                cScissors.style.backgroundColor = "Pink";
+            } */
+            cRock.style.removeProperty = ('backgroundColor');
+            cPaper.style.removeProperty = ('backgroundColor');
+            cScissors.style.removeProperty = ('backgroundColor');
+        }
     
     div1.addEventListener("click", reset);
     
@@ -201,6 +229,7 @@ function comp(){
     const title = document.querySelector("#container");
     document.body.appendChild(container)
     title.textContent = "Computer"
+
 
 
     // add icons
