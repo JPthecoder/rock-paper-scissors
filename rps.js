@@ -74,11 +74,13 @@ function comp(){
             divp1.textContent = `Sapiens: ${sapiens} | Computer: ${comp}`
             div1.appendChild(divp1);
             tieScore++;
+            resetColor();
         } else if (
             (sapiens === "rock" && comp === "scissors") ||
             (sapiens === "paper" && comp === "rock") ||
             (sapiens === "scissors" && comp === "paper")
         ){
+            ;
             const divp2 = document.createElement("p")
             divp2.textContent = "No mercy - humans are victorious";
             div1.appendChild(divp2);
@@ -86,6 +88,7 @@ function comp(){
             divp3.textContent = `Sapiens: ${sapiens} | Computer: ${comp}`
             div1.appendChild(divp3);
             sapiensPoint++;
+            resetColor();
         }else {
             const divp4 = document.createElement("p")
             divp4.textContent = "Aww man - computers are figuring it out";
@@ -94,14 +97,11 @@ function comp(){
             divp5.textContent = `Sapiens: ${sapiens} | Computer: ${comp}`
             div1.appendChild(divp5);
             computerPoint++;
+            resetColor();
         }
         const points = document.createElement("p");
         points.textContent = `Sapiens: ${sapiensPoint} | Computer: ${computerPoint} | Draw: ${tieScore}`;
         div1.appendChild(points);
-
-        if (tieScore++ | sapiensPoint++ | computerPoint++){
-                console.log(resetColor());
-        }
         
         if (sapiensPoint === 5){
             const divp6 = document.createElement("p")
@@ -135,7 +135,16 @@ function comp(){
             const sapiens = target.alt;
             const computer = comp();
             battle(sapiens, computer);
-
+            if (computer === "rock"){
+                cRock.style.backgroundColor = "Pink";
+            } else if (computer === "paper"){
+                cPaper.style.backgroundColor = "Pink";
+            } else if (computer === "scissors"){
+                cScissors.style.backgroundColor = "Pink";
+            }
+        }
+    }
+    function setColor(){
             if (computer === "rock"){
                 cRock.style.backgroundColor = "Pink";
             } else if (computer === "paper"){
@@ -144,20 +153,18 @@ function comp(){
                 cScissors.style.backgroundColor = "Pink";
             } 
         }
-    }
-
     function resetColor(){
-        /* if (computer === "rock"){
-                cRock.style.backgroundColor = "Pink";
-            } else if (computer === "paper"){
-                cPaper.style.backgroundColor = "Pink";
-            } else if (computer === "scissors"){
-                cScissors.style.backgroundColor = "Pink";
-            } */
-            cRock.style.removeProperty = ('backgroundColor');
-            cPaper.style.removeProperty = ('backgroundColor');
-            cScissors.style.removeProperty = ('backgroundColor');
-        }
+              /*  
+            [cRock, cPaper, cScissors].forEach(cOption => {
+                cOption.style.backgroundColor = "";
+            })};
+            */
+                cRock.style.backgroundColor = '';
+                cPaper.style.backgroundColor = '';
+                cScissors.style.backgroundColor = '';
+
+            }
+
     
     div1.addEventListener("click", reset);
     
