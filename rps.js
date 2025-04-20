@@ -21,8 +21,8 @@ function comp(){
     newDiv.appendChild(rock);
 
     const rImg = document.createElement("img");
-    rImg.src = "./icons-for-rps/rock.png"
-    rImg.alt = "Rock"
+    rImg.src = "./iconsrps/rock.png"
+    rImg.alt = "rock"
     rock.appendChild(rImg);
     
     const paper = document.createElement("button");
@@ -30,12 +30,22 @@ function comp(){
     paper.textContent = "Paper"
     paper.value = "paper"
     newDiv.appendChild(paper);
+
+    const pImg = document.createElement("img");
+    pImg.src = "./iconsrps/hello.png"
+    pImg.alt = "Paper"
+    paper.appendChild(pImg);
     
     const scissors = document.createElement("button");
     scissors.setAttribute("id", "option")
     scissors.textContent = "Scissors"
     scissors.value = "scissors"
     newDiv.appendChild(scissors);
+
+    const sImg = document.createElement("img");
+    sImg.src = "./iconsrps/scissors.png"
+    sImg.alt = "scissors"
+    scissors.appendChild(sImg);
 
     const card = document.createElement("div");
     document.body.appendChild(card);
@@ -161,17 +171,32 @@ function comp(){
     cRock.value = "paper";
     cButton.appendChild(cRock);
 
+    const crImg = document.createElement("img");
+    crImg.src = "./iconsrps/rock.png"
+    crImg.alt = "rock"
+    cRock.appendChild(crImg);
+
     const cPaper = document.createElement("button");
     cPaper.setAttribute("id", "cOption")
     cPaper.textContent = "Paper";
     cPaper.value = "paper";
     cButton.appendChild(cPaper);
 
+    const cpImg = document.createElement("img");
+    cpImg.src = "./iconsrps/hello.png"
+    cpImg.alt = "rock"
+    cPaper.appendChild(cpImg);
+
     const cScissors = document.createElement("button");
     cScissors.setAttribute("id", "cOption")
     cScissors.textContent = "Scissors";
     cScissors.value = "scissors";
     cButton.appendChild(cScissors);
+
+    const csImg = document.createElement("img");
+    csImg.src = "./iconsrps/scissors.png"
+    csImg.alt = "rock"
+    cScissors.appendChild(csImg);
 
     const title = document.querySelector("#container");
     document.body.appendChild(container)
