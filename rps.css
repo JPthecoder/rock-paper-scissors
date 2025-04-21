@@ -26,7 +26,15 @@ body {
 #hTitle{
     color: white;
     font-size: 24px;
-    margin-bottom: 25px;
+}
+
+button#clear{
+    color: black;
+    background-color: #FFFFFF;
+}
+
+#cCard1 {
+    font-size: 16px;
 }
 
 #cOption {

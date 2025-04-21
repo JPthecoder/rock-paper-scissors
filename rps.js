@@ -127,7 +127,7 @@ function comp(){
     
         if (sapiensPoint === 5 || computerPoint === 5){
             const divp8 = document.createElement("button")
-            divp8.textContent = "Play Again?"
+            divp8.textContent = "Play Again"
             divp8.setAttribute("id", "clear");
             divp8.classList.add("clear")
             hvsc.appendChild(divp8)
@@ -209,13 +209,6 @@ function comp(){
         }
     }
 
- 
-
-    
-
-    /* const hScore = document.createElement("p");
-    hScore.textContent = `Sapiens: ${sapiensPoint} | Computer: ${computerPoint}`
-    hvsc.appendChild(hScore); */
     const hScore = document.createElement("p");
     hScore.textContent = `Jedi: ${sapiensPoint} | Sith: ${computerPoint} | Draw: ${tieScore}`;
     hvsc.appendChild(hScore);
@@ -225,13 +218,12 @@ function comp(){
         hvsc.appendChild(hScore);
     }
 
-    /* const card1 = document.createElement("div");
+    const card1 = document.createElement("div");
     document.body.appendChild(card1);
 
-    const cCard = document.createElement("button");
-    // Should this be a button or a highlighted paragraph with borders?
-    cCard.textContent = "Computer Choice"
-    card1.appendChild(cCard); */
+    const cCard1 = document.createElement("p");
+    cCard1.textContent = "Play as a Jedi Knight to defeat The Sith Empire"
+    card1.appendChild(cCard1);
 
 
     const cButton = document.createElement("div");
@@ -279,7 +271,9 @@ function comp(){
     // build an overlay for winners and to play again
     // make gray colorway
     all.appendChild(hTitle);
+    all.appendChild(cCard1);
     all.appendChild(divi);
     all.appendChild(hvsc);
     all.appendChild(cButton);
     all.appendChild(container); 
+    
