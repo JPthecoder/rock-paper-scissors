@@ -222,7 +222,7 @@ function comp(){
     document.body.appendChild(card1);
 
     const cCard1 = document.createElement("p");
-    cCard1.textContent = "Play as a Jedi Knight to defeat The Sith Empire"
+    cCard1.textContent = "Battle as a Jedi Knight and get 5 wins to defeat The Sith Empire"
     card1.appendChild(cCard1);
 
 
